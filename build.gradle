@@ -14,3 +14,10 @@ dependencies {
   testCompile 'org.assertj:assertj-core:3.8.0'
 }
 
+compileJava {
+  // Don't warn about the unsafe usage
+  options.compilerArgs << '-XDignore.symbol.file'
+  options.fork = true
+  options.forkOptions.executable = 'javac'
+}
+
